@@ -7,14 +7,14 @@ public class Calculator {
 	private static final String TOKEN_DELIMITER = " ";
 
 	public static double calculate(String expression) {
-		if (isEmpty(expression)) {
+		if (isBlank(expression)) {
 			return 0;
 		}
 		return reduce(split(expression));
 	}
 
-	private static boolean isEmpty(String expression) {
-		return expression == null || expression.isEmpty() || expression.isBlank();
+	private static boolean isBlank(String expression) {
+		return expression == null || expression.isBlank();
 	}
 
 	private static String[] split(String expression) {
